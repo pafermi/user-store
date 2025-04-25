@@ -4,9 +4,10 @@
 
 
 .env
+.env.template 
 
-mongo/
-postgres/
+/mongo
+/postgres
 node_modules/
 dist/
 build/
