@@ -2,6 +2,14 @@ import express, { Router } from 'express';
 import fileUpload from 'express-fileupload';
 import cors from 'cors';
 import path from 'path';
+import { initializeFirebase } from '../config/firebaseHelpers';
+import * as admin from 'firebase-admin';
+
+declare module 'express-serve-static-core' {
+  interface Request {
+    firebaseAdmin?: admin.app.App;
+  }
+}
 
 interface Options {
   port: number;
@@ -46,7 +54,13 @@ export class Server {
       const indexPath = path.join( __dirname + `../../../${ this.publicPath }/index.html` );
       res.sendFile(indexPath);
     });
-    
+
+    //* Initialize Firebase
+    const { admin } = initializeFirebase();
+    this.app.use((req, res, next) => {
+      req.firebaseAdmin = admin;
+      next();
+    });
 
     this.serverListener = this.app.listen(this.port, () => {
       console.log(`Server running on port ${ this.port }`);

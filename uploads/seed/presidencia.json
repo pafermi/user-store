@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "Luis",
+    "apellido": "Lacalle Pou",
+    "edad": 51,
+    "rol": "Presidente",
+    "partido_politico": "Partido Nacional",
+    "sueldo": 1007793,
+    "fecha_ingreso": "2020-03-01",
+    "rol_previo": "Senador",
+    "comentarios": "muchas cosas"
+  },
+  {
+    "id": 2,
+    "nombre": "Beatriz",
+    "apellido": "Argimon",
+    "edad": 63,
+    "rol": "Vicepresidenta",
+    "partido_politico": "Partido Nacional",
+    "sueldo": 720400,
+    "fecha_ingreso": "2020-03-01",
+    "rol_previo": "Representante Nacional por Montevideo de Febrero del 2000 a Febrero del 2010",
+    "comentarios": "cosas"
+  }
+]

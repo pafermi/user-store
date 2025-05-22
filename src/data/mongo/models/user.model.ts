@@ -29,6 +29,17 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    idCard: {
+        type: String,
+        required: [true, 'ID Card is required'],
+        unique: true
+    },
+    membership: {
+        type: String,
+        required: [true, 'Membership is required'],
+        enum: ['BRONZE', 'SILVER', 'GOLD', 'PLATINUM'],
+        default: 'BRONZE'
+    },
     password: {
         type: String,
         required: [true, 'Password is required']
